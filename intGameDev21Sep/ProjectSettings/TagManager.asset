@@ -11,6 +11,10 @@ TagManager:
   - broom
   - janitorOffer
   - jobOffer
+  - npc
+  - inventoryBox
+  - showBox
+  - textBox
   layers:
   - Default
   - TransparentFX
@@ -20,8 +24,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - npc
+  - object
   - 
   - 
   - 

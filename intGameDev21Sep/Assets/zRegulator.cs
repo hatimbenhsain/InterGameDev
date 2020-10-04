@@ -13,6 +13,6 @@ public class zRegulator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position=new Vector3(transform.position.x,transform.position.y,transform.position.y);
+        transform.position=new Vector3(transform.position.x,transform.position.y,GetComponent<Collider2D>().bounds.min.y);
     }
 }

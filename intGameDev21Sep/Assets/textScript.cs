@@ -18,6 +18,9 @@ public class textScript : MonoBehaviour
 	public int currentMessage; 
 	public GameObject player;
 	public inventoryScript inventory;
+    public GameObject itemUsed=null;
+
+    public bool isNpc=true;
 
     void Start()
     {
@@ -41,13 +44,14 @@ public class textScript : MonoBehaviour
     }
 
     public void UpdateText(){
-    	if(inZone && Input.GetKeyDown(KeyCode.Space)){
-    		if(currentMessage==0 && inventory.inventoryOn){
-    			GameObject item=inventory.items[inventory.selectedItem];
+    	if(inZone && ((Input.GetKeyDown(KeyCode.Space) && !inventory.inventoryOn) || (itemUsed!=null && isNpc))){
+    		if(itemUsed!=null && isNpc){
+    			GameObject item=itemUsed;
     			altMessage[] alts=this.gameObject.GetComponents<altMessage>();
     			foreach(altMessage a in alts){
     				if(item.tag==a.item.tag){
     					messages=a.messages;
+                        print(a.messages[0]);
     					break;
     				}
     			}
@@ -55,7 +59,8 @@ public class textScript : MonoBehaviour
     				messages=confusionMessages;
     			}
     			inventory.inventoryOn=false;
-
+                print(itemUsed);
+                itemUsed=null;
     		}
 
         	currentMessage++;
@@ -82,15 +87,17 @@ public class textScript : MonoBehaviour
 
     }
 
-    void OnTriggerStay2D(Collider2D other){
-    	if(other.CompareTag("Player")){
-    		inZone=true;
-    	}
-    }
+    // void OnTriggerStay2D(Collider2D other){
+    // 	if(other.CompareTag("Player")){
+    // 		inZone=true;
+    //         inventory.npcNearby=this.transform.parent.gameObject;
+    // 	}
+    // }
 
-    void OnTriggerExit2D(Collider2D other){
-    	if(other.CompareTag("Player")){
-    		inZone=false;
-    	}
-    }
+    // void OnTriggerExit2D(Collider2D other){
+    // 	if(other.CompareTag("Player")){
+    // 		inZone=false;
+    //         inventory.npcNearby=null;
+    // 	}
+    // }
 }

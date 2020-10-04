@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 57804357}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +171,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000044703484, y: -0.24175745}
+  m_Offset: {x: 0.0011228025, y: -0.23299664}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -182,7 +182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3639466, y: 0.24789149}
+  m_Size: {x: 0.16183311, y: 0.11039245}
   m_EdgeRadius: 0
 --- !u!114 &57804354
 MonoBehaviour:
@@ -209,6 +209,8 @@ MonoBehaviour:
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 0}
+  itemUsed: {fileID: 0}
+  isNpc: 1
 --- !u!114 &57804355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -517,7 +519,7 @@ GameObject:
   - component: {fileID: 280761616}
   - component: {fileID: 280761615}
   - component: {fileID: 280761614}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: broom
   m_TagString: broom
   m_Icon: {fileID: 0}
@@ -549,18 +551,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0022855476, y: -0.13220105}
+  m_Offset: {x: -0.0022855476, y: -0.18778092}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.53, y: 0.52}
+    newSize: {x: 0.53, y: 0.52}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.13896184, y: 0.19679832}
+  m_Size: {x: 0.13896184, y: 0.09776521}
   m_EdgeRadius: 0
 --- !u!50 &280761616
 Rigidbody2D:
@@ -642,12 +644,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 38083912bf0e46f4e8446c06fb5fa69f, type: 3}
+  m_Sprite: {fileID: 7901622571200134146, guid: 38083912bf0e46f4e8446c06fb5fa69f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.53, y: 0.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -686,7 +688,7 @@ GameObject:
   - component: {fileID: 294898336}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -722,11 +724,16 @@ MonoBehaviour:
   messages:
   - it's a discarded mask
   - not awesome
-  basicMessages: []
+  basicMessages:
+  - a used mask
   confusionMessages: []
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 0}
+  itemUsed: {fileID: 0}
+  isNpc: 1
+  description:
+  - a used mask
 --- !u!61 &294898337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -740,7 +747,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01033926, y: -0.17628902}
+  m_Offset: {x: 0.00927639, y: -0.0027700663}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -751,7 +758,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2123053, y: 0.20527965}
+  m_Size: {x: 0.173074, y: 0.11025727}
   m_EdgeRadius: 0
 --- !u!224 &330679425 stripped
 RectTransform:
@@ -795,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -948,7 +955,7 @@ GameObject:
   - component: {fileID: 415278432}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -985,11 +992,16 @@ MonoBehaviour:
   - it seems to be an ad for a job
   - '"consulting job in an accounting start-up"'
   - you don't really get it, but you still pick it up
-  basicMessages: []
+  basicMessages:
+  - a consulting job offer
   confusionMessages: []
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 0}
+  itemUsed: {fileID: 0}
+  isNpc: 1
+  description:
+  - a consulting job offer
 --- !u!61 &415278433
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1003,7 +1015,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01033926, y: -0.11947465}
+  m_Offset: {x: -0.0046250373, y: -0.1391655}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1014,7 +1026,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2123053, y: 0.3189084}
+  m_Size: {x: 0.16024235, y: 0.1296219}
   m_EdgeRadius: 0
 --- !u!1 &425068808
 GameObject:
@@ -1029,7 +1041,7 @@ GameObject:
   - component: {fileID: 425068810}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1065,11 +1077,16 @@ MonoBehaviour:
   messages:
   - it's an empty soda can
   - you decide to pick it up
-  basicMessages: []
+  basicMessages:
+  - an empty soda can
   confusionMessages: []
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 0}
+  itemUsed: {fileID: 0}
+  isNpc: 1
+  description:
+  - an empty soda can
 --- !u!61 &425068811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1083,7 +1100,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01033926, y: -0.17628902}
+  m_Offset: {x: 0.0041549206, y: 0.00056651235}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1094,7 +1111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2123053, y: 0.20527965}
+  m_Size: {x: 0.06959295, y: 0.05928111}
   m_EdgeRadius: 0
 --- !u!224 &497163239 stripped
 RectTransform:
@@ -1333,7 +1350,7 @@ GameObject:
   - component: {fileID: 600471678}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1365,7 +1382,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000000044703484, y: -0.14009458}
+  m_Offset: {x: -0.008606136, y: -0.1616191}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1376,7 +1393,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3639466, y: 0.33971602}
+  m_Size: {x: 0.14707386, y: 0.15891045}
   m_EdgeRadius: 0
 --- !u!114 &600471678
 MonoBehaviour:
@@ -1395,11 +1412,16 @@ MonoBehaviour:
   messages:
   - looks like...
   - ...a really tall broom
-  basicMessages: []
+  basicMessages:
+  - a very tall broom
   confusionMessages: []
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 0}
+  itemUsed: {fileID: 0}
+  isNpc: 1
+  description:
+  - a very tall broom
 --- !u!1001 &632174495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1437,7 +1459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1513,9 +1535,9 @@ GameObject:
   - component: {fileID: 634211751}
   - component: {fileID: 634211750}
   - component: {fileID: 634211749}
-  - component: {fileID: 634211748}
   - component: {fileID: 634211747}
-  m_Layer: 0
+  - component: {fileID: 634211748}
+  m_Layer: 9
   m_Name: paperBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1547,18 +1569,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011842012, y: -0.1853033}
+  m_Offset: {x: -0.0015895963, y: -0.0013311207}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.12, y: 0.12}
+    newSize: {x: 0.12, y: 0.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.056138992, y: 0.043863893}
+  m_Size: {x: 0.07866919, y: 0.0738948}
   m_EdgeRadius: 0
 --- !u!50 &634211749
 Rigidbody2D:
@@ -1640,12 +1662,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ac9ae30b642784d44a38656422238eb7, type: 3}
+  m_Sprite: {fileID: -6169054684571264341, guid: ac9ae30b642784d44a38656422238eb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.12, y: 0.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1703,7 +1725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1781,7 +1803,7 @@ GameObject:
   - component: {fileID: 677787346}
   - component: {fileID: 677787345}
   - component: {fileID: 677787344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: janitorOffer
   m_TagString: janitorOffer
   m_Icon: {fileID: 0}
@@ -1813,18 +1835,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011842012, y: -0.1853033}
+  m_Offset: {x: -0.0066954494, y: -0.20074895}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.23, y: 0.24}
+    newSize: {x: 0.23, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.056138992, y: 0.043863893}
+  m_Size: {x: 0.11995685, y: 0.10358709}
   m_EdgeRadius: 0
 --- !u!50 &677787346
 Rigidbody2D:
@@ -1906,12 +1928,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 512d345553538a548b1899bcfda7b933, type: 3}
+  m_Sprite: {fileID: -7932428778604135427, guid: 512d345553538a548b1899bcfda7b933, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.23, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1925,7 +1947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677787343}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.664, y: 0.914, z: 1}
+  m_LocalPosition: {x: 1.664, y: 0.914, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 894568328}
@@ -2026,7 +2048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2127,7 +2149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2334,9 +2356,9 @@ GameObject:
   - component: {fileID: 828033097}
   - component: {fileID: 828033096}
   - component: {fileID: 828033095}
-  - component: {fileID: 828033094}
   - component: {fileID: 828033093}
-  m_Layer: 0
+  - component: {fileID: 828033094}
+  m_Layer: 9
   m_Name: mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2368,18 +2390,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015363783, y: -0.17755382}
+  m_Offset: {x: -0.000000014901161, y: -0.0053142905}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.19, y: 0.19}
+    newSize: {x: 0.19, y: 0.19}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08853942, y: 0.05936286}
+  m_Size: {x: 0.14750168, y: 0.077809215}
   m_EdgeRadius: 0
 --- !u!50 &828033095
 Rigidbody2D:
@@ -2461,12 +2483,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 74a2b0dff57db0d4b94d2af70753026f, type: 3}
+  m_Sprite: {fileID: -1500434286138515679, guid: 74a2b0dff57db0d4b94d2af70753026f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.19, y: 0.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2712,7 +2734,7 @@ GameObject:
   - component: {fileID: 894568329}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2750,11 +2772,16 @@ MonoBehaviour:
   - '"seeking janitor. has to be a robot."'
   - you're not a robot
   - nevertheless,  you pick it up
-  basicMessages: []
+  basicMessages:
+  - a janitor job offer
   confusionMessages: []
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 0}
+  itemUsed: {fileID: 0}
+  isNpc: 1
+  description:
+  - a janitor job offer
 --- !u!61 &894568330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2768,7 +2795,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01033926, y: -0.11947465}
+  m_Offset: {x: -0.026774228, y: -0.15114087}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2779,7 +2806,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2123053, y: 0.3189084}
+  m_Size: {x: 0.15752208, y: 0.12403917}
   m_EdgeRadius: 0
 --- !u!1001 &932022278
 PrefabInstance:
@@ -2818,7 +2845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2896,7 +2923,7 @@ GameObject:
   - component: {fileID: 967414845}
   - component: {fileID: 967414844}
   - component: {fileID: 967414843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: janitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3091,6 +3118,82 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1085441438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085441439}
+  - component: {fileID: 1085441441}
+  - component: {fileID: 1085441440}
+  m_Layer: 5
+  m_Name: showBox
+  m_TagString: showBox
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1085441439
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085441438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2108501604}
+  m_Father: {fileID: 1648252724}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0000038147, y: 199.9}
+  m_SizeDelta: {x: 127.1893, y: 62.90526}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1085441440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085441438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8e0f46a244cc85d4cbfd1174f94ff345, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1085441441
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085441438}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1088208624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3128,7 +3231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3210,7 +3313,7 @@ GameObject:
   - component: {fileID: 1130236577}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3242,7 +3345,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01119262, y: -0.20894998}
+  m_Offset: {x: 0.00017726421, y: -0.21139896}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3253,7 +3356,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.52991045, y: 0.46761405}
+  m_Size: {x: 0.29246807, y: 0.21292627}
   m_EdgeRadius: 0
 --- !u!114 &1130236572
 MonoBehaviour:
@@ -3284,6 +3387,8 @@ MonoBehaviour:
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 1587681657}
+  itemUsed: {fileID: 0}
+  isNpc: 1
 --- !u!114 &1130236573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3415,7 +3520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3492,7 +3597,7 @@ GameObject:
   - component: {fileID: 1239267460}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3528,11 +3633,16 @@ MonoBehaviour:
   messages:
   - it's a rolled up piece of paper
   - ...are you really gonna pick it up?
-  basicMessages: []
+  basicMessages:
+  - a rolled up piece of paper
   confusionMessages: []
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 0}
+  itemUsed: {fileID: 0}
+  isNpc: 1
+  description:
+  - a rolled up piece of paper
 --- !u!61 &1239267461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3546,7 +3656,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01033926, y: -0.17628902}
+  m_Offset: {x: 0.0027059317, y: -0.003727734}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3557,7 +3667,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2123053, y: 0.20527965}
+  m_Size: {x: 0.08475232, y: 0.083471656}
   m_EdgeRadius: 0
 --- !u!1 &1314780844
 GameObject:
@@ -3783,7 +3893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7553,7 +7663,7 @@ GameObject:
   - component: {fileID: 1367192124}
   - component: {fileID: 1367192123}
   - component: {fileID: 1367192122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7585,18 +7695,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011842012, y: -0.1853033}
+  m_Offset: {x: 0.0050210953, y: 0.0019479543}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.13, y: 0.12}
+    newSize: {x: 0.13, y: 0.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.056138992, y: 0.043863893}
+  m_Size: {x: 0.060635805, y: 0.06523195}
   m_EdgeRadius: 0
 --- !u!50 &1367192124
 Rigidbody2D:
@@ -7678,12 +7788,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0d016e4f4fb3fef48b3cab0cb084fa6b, type: 3}
+  m_Sprite: {fileID: 6388389237426139460, guid: 0d016e4f4fb3fef48b3cab0cb084fa6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.13, y: 0.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7741,7 +7851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7996,11 +8106,19 @@ MonoBehaviour:
   items: []
   images: []
   player: {fileID: 0}
+  textCanvas: {fileID: 1861624412}
+  showBox: {fileID: 1085441438}
   inventoryOn: 0
   placeHolder: {fileID: -6033076104851312668, guid: 41ae32d275b491746b030927fc977040, type: 3}
   egg: {fileID: 1128001666122763634, guid: 7c313ec2195ae634989d56b11c32b1a3, type: 3}
   img: {fileID: 0}
   selectedItem: 0
+  selectedBox: {fileID: 0}
+  hoveredBox: {fileID: 0}
+  npcNearby: {fileID: 0}
+  greyingFactor: 0.5
+  hoverFactor: 0.75
+  raycaster: {fileID: 1648252726}
 --- !u!222 &1587681658
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8046,7 +8164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8198,6 +8316,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1085441439}
   - {fileID: 2131573872}
   - {fileID: 404017303}
   - {fileID: 497163239}
@@ -8304,7 +8423,7 @@ GameObject:
   - component: {fileID: 1712908448}
   - component: {fileID: 1712908447}
   - component: {fileID: 1712908446}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: roomba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8469,7 +8588,7 @@ GameObject:
   - component: {fileID: 1717166978}
   - component: {fileID: 1717166977}
   - component: {fileID: 1717166976}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: jobOffer1 (1)
   m_TagString: jobOffer
   m_Icon: {fileID: 0}
@@ -8501,18 +8620,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011842012, y: -0.1853033}
+  m_Offset: {x: -0.00012293458, y: -0.20484242}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.22, y: 0.22}
+    newSize: {x: 0.22, y: 0.22}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.056138992, y: 0.043863893}
+  m_Size: {x: 0.14468306, y: 0.12723106}
   m_EdgeRadius: 0
 --- !u!50 &1717166978
 Rigidbody2D:
@@ -8594,12 +8713,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9bdaceed162639743a7bac3443310e94, type: 3}
+  m_Sprite: {fileID: -7483343658273202990, guid: 9bdaceed162639743a7bac3443310e94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.22, y: 0.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8613,7 +8732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717166975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.884, y: 0.936, z: 1}
+  m_LocalPosition: {x: -0.877, y: 0.929, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1836454992}
@@ -8690,7 +8809,7 @@ GameObject:
   - component: {fileID: 1836454993}
   m_Layer: 0
   m_Name: textBox
-  m_TagString: Untagged
+  m_TagString: textBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8728,11 +8847,16 @@ MonoBehaviour:
   - '"seeking unpaid research interns...'
   - ...40+ hours a week, phd required."
   - you don't have a phd but you pick it up
-  basicMessages: []
+  basicMessages:
+  - a research internship offer
   confusionMessages: []
   currentMessage: 0
   player: {fileID: 0}
   inventory: {fileID: 0}
+  itemUsed: {fileID: 0}
+  isNpc: 1
+  description:
+  - a research internship offer
 --- !u!61 &1836454994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8746,7 +8870,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01033926, y: -0.11947465}
+  m_Offset: {x: -0.024015963, y: -0.16198856}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -8757,7 +8881,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2123053, y: 0.3189084}
+  m_Size: {x: 0.1575985, y: 0.12832892}
   m_EdgeRadius: 0
 --- !u!1001 &1844433856
 PrefabInstance:
@@ -8914,7 +9038,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &1876159169
 GameObject:
@@ -8928,9 +9052,9 @@ GameObject:
   - component: {fileID: 1876159174}
   - component: {fileID: 1876159173}
   - component: {fileID: 1876159172}
-  - component: {fileID: 1876159171}
   - component: {fileID: 1876159170}
-  m_Layer: 0
+  - component: {fileID: 1876159171}
+  m_Layer: 9
   m_Name: jobOffer1
   m_TagString: jobOffer
   m_Icon: {fileID: 0}
@@ -8962,18 +9086,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011842012, y: -0.1853033}
+  m_Offset: {x: 0, y: -0.121742204}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.18, y: 0.19}
+    newSize: {x: 0.18, y: 0.19}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.056138992, y: 0.043863893}
+  m_Size: {x: 0.18, y: 0.16147444}
   m_EdgeRadius: 0
 --- !u!50 &1876159172
 Rigidbody2D:
@@ -9055,12 +9179,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f368b324d8bced4c8d022dfb6766366, type: 3}
+  m_Sprite: {fileID: 6655341396730244586, guid: 1f368b324d8bced4c8d022dfb6766366, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.18, y: 0.19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -9074,7 +9198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876159169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.408, y: -0.34, z: 1}
+  m_LocalPosition: {x: 0.393, y: -0.397, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415278431}
@@ -9118,7 +9242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9216,8 +9340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.9, y: -211.8}
-  m_SizeDelta: {x: 426.37204, y: 132.53012}
+  m_AnchoredPosition: {x: 12.4, y: -212}
+  m_SizeDelta: {x: 493.72507, y: 122.42337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920016638
 MonoBehaviour:
@@ -9240,19 +9364,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 13d10483df099e7498d574a71c4d5efa, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 26b58de9ebec1b845895bd24dd0b0412, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 44
+    m_MaxSize: 50
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: I am a Janitor Bot.
+  m_Text: 'I am a Janitor Bot.
+
+    this is text text text text text text alright'
 --- !u!222 &1920016639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9459,7 +9585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9562,6 +9688,10 @@ MonoBehaviour:
   force: 10
   anim: {fileID: 2079872972}
   frozen: 0
+  direction: {x: 0, y: 0}
+  maxDistance: 0.14
+  textBoxes: []
+  inventory: {fileID: 1587681657}
 --- !u!50 &2079872970
 Rigidbody2D:
   serializedVersion: 4
@@ -9705,6 +9835,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1d2dad805177246ba11df823540dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2108501603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2108501604}
+  - component: {fileID: 2108501606}
+  - component: {fileID: 2108501605}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2108501604
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108501603}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1085441439}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2108501605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108501603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 26b58de9ebec1b845895bd24dd0b0412, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 50
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: show
+--- !u!222 &2108501606
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108501603}
+  m_CullTransparentMesh: 0
 --- !u!1 &2131573869
 GameObject:
   m_ObjectHideFlags: 0
@@ -9718,7 +9927,7 @@ GameObject:
   - component: {fileID: 2131573870}
   m_Layer: 5
   m_Name: inventoryBox
-  m_TagString: Untagged
+  m_TagString: inventoryBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9773,7 +9982,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1648252724}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9817,7 +10026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 471001545288369588, guid: fea579c53e60bff4fabe894312319028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
