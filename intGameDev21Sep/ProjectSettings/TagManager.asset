@@ -15,6 +15,7 @@ TagManager:
   - inventoryBox
   - showBox
   - textBox
+  - goddessPart
   layers:
   - Default
   - TransparentFX

@@ -206,4 +206,25 @@ public class inventoryScript : MonoBehaviour
     	}
 
     }
+
+    public void deleteItem(GameObject item){
+        int i=getIndex(item);
+        if(i>=0){
+            images.RemoveAt(i);
+            descriptions.RemoveAt(i);
+            items.RemoveAt(i);
+            //some sort of code to move the images back and delete this image
+        }
+    }
+
+    public int getIndex(GameObject item){
+        int i=0;
+        foreach(GameObject currentItem in items){
+            if(currentItem==item){
+                return i;
+            }
+            i++;
+        }
+        return -1;     
+    }
 }

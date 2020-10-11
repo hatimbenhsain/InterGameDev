@@ -5,7 +5,7 @@ using UnityEngine;
 public class altMessage : MonoBehaviour
 {
 	public string[] messages;
-	public GameObject item;
+	public GameObject[] item;
     // Start is called before the first frame update
     void Start()
     {

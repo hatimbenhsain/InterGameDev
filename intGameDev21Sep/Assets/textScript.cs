@@ -49,11 +49,13 @@ public class textScript : MonoBehaviour
     			GameObject item=itemUsed;
     			altMessage[] alts=this.gameObject.GetComponents<altMessage>();
     			foreach(altMessage a in alts){
-    				if(item.tag==a.item.tag){
-    					messages=a.messages;
-                        print(a.messages[0]);
-    					break;
-    				}
+                    foreach(GameObject i in a.item){
+        				if(item.tag==i.tag){
+        					messages=a.messages;
+                            print(a.messages[0]);
+        					break;
+        				}
+                    }
     			}
     			if(messages==basicMessages){
     				messages=confusionMessages;

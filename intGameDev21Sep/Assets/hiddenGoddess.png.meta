@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: cb8fe897b76e0e844963ddf8ba145d68
+guid: 133a43887b2970f42af4a442ce9fbf81
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8956748836060546072
-    second: roomba 1_0
+      213: 4857827457792945712
+    second: hiddenGoddess_0
   - first:
-      213: -1049774530201228258
-    second: roomba 1_1
+      213: -8069621601163235688
+    second: hiddenGoddess_1
+  - first:
+      213: -3797454801645877760
+    second: hiddenGoddess_2
+  - first:
+      213: -6441361816352633419
+    second: hiddenGoddess_3
+  - first:
+      213: 5301423805543554867
+    second: hiddenGoddess_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -73,7 +82,7 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -85,7 +94,7 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -97,7 +106,7 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: 4
     textureCompression: 1
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -107,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: roomba 1_0
+      name: hiddenGoddess_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81448cb8c93cc4c70800000000000000
-      internalID: 8956748836060546072
+      spriteID: 03e23e1c5587a6340800000000000000
+      internalID: 4857827457792945712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: roomba 1_1
+      name: hiddenGoddess_1
       rect:
         serializedVersion: 2
         x: 64
@@ -142,8 +151,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1c6a1170a37e61f0800000000000000
-      internalID: -1049774530201228258
+      spriteID: 89ea8de88e1f20090800000000000000
+      internalID: -8069621601163235688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hiddenGoddess_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006cb494afabc4bc0800000000000000
+      internalID: -3797454801645877760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hiddenGoddess_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd498a4e8fab96a0800000000000000
+      internalID: -6441361816352633419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hiddenGoddess_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f193decd0729940800000000000000
+      internalID: 5301423805543554867
       vertices: []
       indices: 
       edges: []
