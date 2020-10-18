@@ -20,7 +20,13 @@ public class textScript : MonoBehaviour
 	public inventoryScript inventory;
     public GameObject itemUsed=null;
 
+    public AudioClip speechSound=null;
+    AudioClip typingSound;
+
     public bool isNpc=true;
+    string spokenMessage="";
+    float lettersSpoken=0f;
+    float textSpeed;
 
     void Start()
     {
@@ -29,12 +35,15 @@ public class textScript : MonoBehaviour
         currentMessage=0;
         player=GameObject.FindGameObjectsWithTag("Player")[0];
         inventory=GameObject.FindGameObjectsWithTag("inventory")[0].GetComponent<inventoryScript>();
+        textSpeed=inventory.textSpeed;
         int i=0;
         basicMessages=new string[messages.Length];
         foreach(string m in messages){
         	basicMessages[i]=m;
         	i++;
         }
+        typingSound=canvas.GetComponent<AudioSource>().clip;
+
     }
 
     // Update is called once per frame
@@ -66,6 +75,8 @@ public class textScript : MonoBehaviour
     		}
 
         	currentMessage++;
+            lettersSpoken=0;
+
         	if(currentMessage<=messages.Length){
         		canvas.enabled=true;
         		player.GetComponent<playerController>().frozen=true;
@@ -79,27 +90,26 @@ public class textScript : MonoBehaviour
         	}
         	
         }
-        // if(!inZone){
-        // 	canvas.enabled=false;
-        // }
+
         if(messages.Length>0 && inZone && currentMessage>0){
-        	(canvas.GetComponentInChildren(typeof(Text)) as Text).text=messages[currentMessage-1];
+            lettersSpoken+=textSpeed;
+            if(lettersSpoken<messages[currentMessage-1].Length && !canvas.GetComponent<AudioSource>().isPlaying){
+                if(speechSound!=null){
+                    canvas.GetComponent<AudioSource>().clip=speechSound;
+                }else{
+                    canvas.GetComponent<AudioSource>().clip=typingSound;
+                }
+                canvas.GetComponent<AudioSource>().Play();
+                Camera.main.gameObject.GetComponent<AudioSource>().volume=0.5f;
+            }else if(lettersSpoken>messages[currentMessage-1].Length && canvas.GetComponent<AudioSource>().isPlaying){
+                canvas.GetComponent<AudioSource>().Stop();
+                Camera.main.gameObject.GetComponent<AudioSource>().volume=1f;
+            }
+            spokenMessage=messages[currentMessage-1].Substring(0,Mathf.Min(messages[currentMessage-1].Length,(int)Mathf.Ceil(lettersSpoken)));
+        	(canvas.GetComponentInChildren(typeof(Text)) as Text).text=spokenMessage;
         }
 
 
     }
 
-    // void OnTriggerStay2D(Collider2D other){
-    // 	if(other.CompareTag("Player")){
-    // 		inZone=true;
-    //         inventory.npcNearby=this.transform.parent.gameObject;
-    // 	}
-    // }
-
-    // void OnTriggerExit2D(Collider2D other){
-    // 	if(other.CompareTag("Player")){
-    // 		inZone=false;
-    //         inventory.npcNearby=null;
-    // 	}
-    // }
 }

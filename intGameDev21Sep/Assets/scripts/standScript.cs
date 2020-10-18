@@ -10,6 +10,7 @@ public class standScript : MonoBehaviour
 	public GameObject objectToCompare;
 	public int minimumRequired;
 	public GameObject replacement;
+    public bool replaceNext;
 
 	public bool changed=false;
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class standScript : MonoBehaviour
     {
         txt=GetComponent<textScript>();
         inventory=txt.inventory;
+        replaceNext=false;
     }
 
     // Update is called once per frame
@@ -41,6 +43,24 @@ public class standScript : MonoBehaviour
         			}
         		}
         	}
+        }
+
+        if(changed && !replaceNext && txt.inZone && txt.canvas.enabled && txt.messages==newMessages){
+            replaceNext=true;
+        }
+        if(replaceNext && !txt.canvas.enabled){
+            replacement.SetActive(true);
+            List<GameObject> itemsToRemove=new List<GameObject>();
+            foreach(GameObject item in inventory.items){
+                if(item.tag==objectToCompare.tag){
+                    itemsToRemove.Add(item);
+                }
+            }
+            foreach(GameObject item in itemsToRemove){
+                inventory.deleteItem(item);
+            }
+            inventory.reorganize();
+            this.gameObject.SetActive(false);
         }
         //some sort of code to replace the current game object with a new one
     }

@@ -24,6 +24,9 @@ public class inventoryScript : MonoBehaviour
     public GameObject hoveredBox=null;
     public GameObject npcNearby=null;
 
+    public AudioClip invOpen;
+    public AudioClip invClose;
+    public AudioClip itemPickup;
 
     public float greyingFactor=0.5f;
     public float hoverFactor=0.75f;
@@ -33,6 +36,10 @@ public class inventoryScript : MonoBehaviour
     EventSystem eventSystem;
 
     Ray ray;
+
+    string spokenMessage="";
+    float lettersSpoken=0f;
+    public float textSpeed=0.3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -109,11 +116,14 @@ public class inventoryScript : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && showBoxSelected && selectedBox!=null && npcNearby!=null){
             (npcNearby.GetComponentInChildren(typeof(textScript)) as textScript).itemUsed=items[selectedItem];
+            lettersSpoken=0;
         }else if(Input.GetMouseButtonDown(0) && hoveredBox!=null && inventoryOn){
+            lettersSpoken=0;
             selectedBox=hoveredBox;
             selectedBox.GetComponent<Image>().color=new Color(1f,1f,1f,1f);
             selectedBox.transform.GetChild(0).GetComponent<Image>().color=selectedBox.GetComponent<Image>().color;
         }else if(Input.GetMouseButtonDown(0) && inventoryOn){
+            lettersSpoken=0;
             selectedBox=null;
             selectedItem=-1;
             bool outsideBox=true;
@@ -132,13 +142,19 @@ public class inventoryScript : MonoBehaviour
 
         canvas.enabled=inventoryOn;
         if(Input.GetKeyDown(KeyCode.Escape)){
+            lettersSpoken=0;
             if((!inventoryOn && !textCanvas.enabled) || inventoryOn) inventoryOn=!inventoryOn;
+            if(inventoryOn) gameObject.GetComponent<AudioSource>().clip=invOpen;
+            else gameObject.GetComponent<AudioSource>().clip=invClose;
+            gameObject.GetComponent<AudioSource>().Play();
         }
         if(inventoryOn){
         	player.GetComponent<playerController>().frozen=true;
             if(selectedItem>=0){
                 textCanvas.enabled=true;
-                (textCanvas.GetComponentInChildren(typeof(Text)) as Text).text=descriptions[selectedItem][0];
+                lettersSpoken+=textSpeed;
+                spokenMessage=descriptions[selectedItem][0].Substring(0,Mathf.Min(descriptions[selectedItem][0].Length,(int)Mathf.Ceil(lettersSpoken)));
+                (textCanvas.GetComponentInChildren(typeof(Text)) as Text).text=spokenMessage;
             }else{
                 (textCanvas.GetComponentInChildren(typeof(Text)) as Text).text="";
             }
@@ -171,7 +187,10 @@ public class inventoryScript : MonoBehaviour
     }
 
     public void addItem(GameObject item){
-    	
+        if(Time.time>0){
+        	gameObject.GetComponent<AudioSource>().clip=itemPickup;
+            gameObject.GetComponent<AudioSource>().Play();
+        }
     	GameObject g=new GameObject();
     	g.transform.parent=canvas.gameObject.transform;
     	Image img=g.AddComponent<Image>();
@@ -210,11 +229,39 @@ public class inventoryScript : MonoBehaviour
     public void deleteItem(GameObject item){
         int i=getIndex(item);
         if(i>=0){
+            // foreach(Transform child in canvas.gameObject.transform){
+            //     if (child.gameObject.tag=="box" && child.gameObject.activeInHierarchy && child.child.gameObject==item){
+            //         child.gameObject.SetActive(false);
+            //         g.transform.position=child.position;
+            //         g.transform.parent=child;
+            //         break;
+            //     }
+            // }
+            img=images[i];
             images.RemoveAt(i);
+            img.gameObject.transform.parent.gameObject.SetActive(false);
+            Destroy(img.gameObject);
             descriptions.RemoveAt(i);
             items.RemoveAt(i);
+            print(i);
             //some sort of code to move the images back and delete this image
         }
+    }
+
+    public void reorganize(){
+        List<Transform> emptyBoxes=new List<Transform>();
+        foreach(Transform child in canvas.gameObject.transform){
+            if (child.gameObject.tag=="box" && !child.gameObject.activeInHierarchy){
+                emptyBoxes.Add(child);
+            }else if(emptyBoxes.Count>0 && child.gameObject.tag=="box" && child.gameObject.activeInHierarchy){
+                child.GetChild(0).position=emptyBoxes[0].position;
+                child.GetChild(0).parent=emptyBoxes[0];
+                emptyBoxes[0].gameObject.SetActive(true);
+                child.gameObject.SetActive(false);
+                emptyBoxes.RemoveAt(0);
+            }
+        }
+        selectedItem=-1;
     }
 
     public int getIndex(GameObject item){
