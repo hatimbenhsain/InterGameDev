@@ -18,7 +18,6 @@ public class janitorScript : MonoBehaviour
     void Start()
     {
         sr=transform.parent.gameObject.GetComponent<SpriteRenderer>().color;
-        roomba.jobOffered=true;
     }
 
     // Update is called once per frame

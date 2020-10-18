@@ -109,6 +109,10 @@ public class textScript : MonoBehaviour
         	(canvas.GetComponentInChildren(typeof(Text)) as Text).text=spokenMessage;
         }
 
+        if(!canvas.enabled && canvas.GetComponent<AudioSource>().isPlaying){
+            canvas.GetComponent<AudioSource>().Stop();
+        }
+
 
     }
 
