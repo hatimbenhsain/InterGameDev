@@ -16,6 +16,7 @@ TagManager:
   - showBox
   - textBox
   - goddessPart
+  - thoughtBubble
   layers:
   - Default
   - TransparentFX

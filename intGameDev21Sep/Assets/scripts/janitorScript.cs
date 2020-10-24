@@ -28,6 +28,7 @@ public class janitorScript : MonoBehaviour
         	ts.basicMessages=finalMessages;
         }else if(ts.inZone && !ts.canvas.enabled && ts.messages==finalMessages && !disappearing){
         	disappearing=true;
+            ts.resolved=true;
         }
         if(disappearing && sr.a>=0f){
             sr.a-=0.005f;

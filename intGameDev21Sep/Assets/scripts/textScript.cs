@@ -19,6 +19,8 @@ public class textScript : MonoBehaviour
 	public GameObject player;
 	public inventoryScript inventory;
     public GameObject itemUsed=null;
+    public GameObject thoughtBubble=null;
+
 
     public AudioClip speechSound=null;
     AudioClip typingSound;
@@ -27,6 +29,7 @@ public class textScript : MonoBehaviour
     string spokenMessage="";
     float lettersSpoken=0f;
     float textSpeed;
+    public bool resolved=false;
 
     void Start()
     {
@@ -43,6 +46,11 @@ public class textScript : MonoBehaviour
         	i++;
         }
         typingSound=canvas.GetComponent<AudioSource>().clip;
+        foreach(Transform child in transform.parent){
+            if(child.gameObject.tag=="thoughtBubble"){
+                thoughtBubble=child.gameObject;
+            }
+        }
 
     }
 
@@ -53,7 +61,16 @@ public class textScript : MonoBehaviour
     }
 
     public void UpdateText(){
-    	if(inZone && ((Input.GetKeyDown(KeyCode.Space) && !inventory.inventoryOn) || (itemUsed!=null && isNpc))){
+        if(thoughtBubble!=null && isNpc && !canvas.enabled && !resolved){
+            thoughtBubble.SetActive(true);
+            thoughtBubble.transform.position=new Vector3(thoughtBubble.transform.position.x,thoughtBubble.transform.position.y,transform.parent.position.z);
+        }else if(thoughtBubble!=null){
+            thoughtBubble.SetActive(false);
+        }
+
+    	if(canvas.enabled && currentMessage>0 && lettersSpoken<messages[currentMessage-1].Length && inZone && Input.GetKeyDown(KeyCode.Space)){
+            lettersSpoken=messages[currentMessage-1].Length;
+        }else if(inZone && ((Input.GetKeyDown(KeyCode.Space) && !inventory.inventoryOn) || (itemUsed!=null && isNpc))){
     		if(itemUsed!=null && isNpc){
     			GameObject item=itemUsed;
     			altMessage[] alts=this.gameObject.GetComponents<altMessage>();

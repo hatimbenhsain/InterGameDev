@@ -60,10 +60,10 @@ public class playerController : MonoBehaviour
             bod.velocity=Vector2.zero;
         }
 
-        if(Input.GetKey(KeyCode.LeftShift) && gameObject.GetComponent<Animator>().speed==1){
+        if((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && gameObject.GetComponent<Animator>().speed==1){
             gameObject.GetComponent<Animator>().speed=speedFactor;
             forceVec=forceVec*speedFactor;
-        }else if(!Input.GetKey(KeyCode.LeftShift) && gameObject.GetComponent<Animator>().speed==speedFactor){
+        }else if(!Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift) && gameObject.GetComponent<Animator>().speed==speedFactor){
             gameObject.GetComponent<Animator>().speed=1;
             forceVec=forceVec/speedFactor;
         }
